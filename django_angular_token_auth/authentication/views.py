@@ -16,6 +16,5 @@ class UserListAPIView(generics.ListAPIView):
         # Note the use of `get_queryset()` instead of `self.queryset`
         queryset = self.get_queryset()
         serializer = UserSerializer(queryset, many=True)
-        for q in serializer.data:
-            print str(q)
+        
         return Response(serializer.data)
