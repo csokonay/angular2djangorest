@@ -36,12 +36,7 @@ import { HeroComponent, HeroDetailComponent, EnterMeetingComponent } from './myc
     providers: [
         AuthGuard,
         AuthenticationService,
-        UserService,
-
-        // providers used to create fake backend
-        //fakeBackendProvider,
-        //MockBackend,
-        //BaseRequestOptions
+        UserService
     ],
     bootstrap: [AppComponent]
 })
