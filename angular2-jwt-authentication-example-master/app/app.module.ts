@@ -3,20 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-// used to create fake backend
-//import { fakeBackendProvider } from './_helpers/index';
-//import { MockBackend, MockConnection } from '@angular/http/testing';
-//import { BaseRequestOptions } from '@angular/http';
-
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
 
+import { HeroService } from './mycomponents/hero.service';
 import { AuthGuard } from './_guards/index';
 import { AuthenticationService, UserService } from './_services/index';
 import { LoginComponent } from './login/index';
 import { HomeComponent } from './home/index';
+import { HeroesComponent } from './mycomponents/heroes.component';
 import { HeroComponent, HeroDetailComponent, EnterMeetingComponent } from './mycomponents/index';
-
+import { DashboardComponent } from './mycomponents/index';
 
 @NgModule({
     imports: [
@@ -29,14 +26,17 @@ import { HeroComponent, HeroDetailComponent, EnterMeetingComponent } from './myc
         AppComponent,
         LoginComponent,
         HomeComponent,
+        DashboardComponent,
         HeroComponent,
+        HeroesComponent,
         HeroDetailComponent,
         EnterMeetingComponent
     ],
     providers: [
         AuthGuard,
         AuthenticationService,
-        UserService
+        UserService,
+        HeroService
     ],
     bootstrap: [AppComponent]
 })
