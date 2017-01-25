@@ -12,7 +12,7 @@ import { AuthenticationService, UserService } from './_services/index';
 import { LoginComponent } from './login/index';
 import { HomeComponent } from './home/index';
 import { HeroesComponent } from './mycomponents/heroes.component';
-import { HeroComponent, HeroDetailComponent, EnterMeetingComponent } from './mycomponents/index';
+import { HeroDetailComponent, EnterMeetingComponent } from './mycomponents/index';
 import { DashboardComponent } from './mycomponents/index';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { DashboardComponent } from './mycomponents/index';
         LoginComponent,
         HomeComponent,
         DashboardComponent,
-        HeroComponent,
+        //HeroComponent,
         HeroesComponent,
         HeroDetailComponent,
         EnterMeetingComponent
