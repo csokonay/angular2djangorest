@@ -4,7 +4,7 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { routing }        from './app.routing';
+import { AppRoutingModule }        from './app.routing';
 
 import { HeroService } from './mycomponents/hero.service';
 import { AuthGuard } from './_guards/index';
@@ -20,7 +20,7 @@ import { DashboardComponent } from './mycomponents/index';
         BrowserModule,
         FormsModule,
         HttpModule,
-        routing
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
