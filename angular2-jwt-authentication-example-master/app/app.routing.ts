@@ -10,10 +10,10 @@ import { HeroDetailComponent, EnterMeetingComponent } from './mycomponents/index
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    //{ path: '', component: HomeComponent, canActivate: [AuthGuard] },
     //{ path: 'heroapp', component: HeroComponent },
-    { path: 'heroes', component: HeroesComponent },
-    { path: 'dashboard',component: DashboardComponent },
+    { path: 'heroes', component: HeroesComponent, canActivate: [AuthGuard] },
+    { path: 'dashboard',component: DashboardComponent, canActivate: [AuthGuard] },
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'detail/:id', component: HeroDetailComponent },
 
