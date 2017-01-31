@@ -2,14 +2,16 @@
 
 import { Hero } from './mycomponents/hero';
 import { HeroService } from './mycomponents/hero.service';
+import { AuthenticationService } from './_services/index';
 
 @Component({
   selector: 'my-app',
   template: `
      <h1>{{title}}</h1>
      <nav>
-        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+        <a routerLink="/dashboard" routerLinkActive="active" *ngIf="authService.isLoggedIn()">Dashboard</a>
+        <a routerLink="/heroes" routerLinkActive="active" *ngIf="authService.isLoggedIn()">Heroes</a>
+        <a [routerLink]="['/login']" *ngIf="authService.isLoggedIn()">Logout</a>
      </nav>
      <router-outlet></router-outlet>
    `,
@@ -18,4 +20,7 @@ import { HeroService } from './mycomponents/hero.service';
 export class AppComponent {
   heroes: Hero[];
   title = 'Tour of Heroes';
+  
+  constructor(private authService: AuthenticationService) { }
+
 }
