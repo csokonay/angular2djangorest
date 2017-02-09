@@ -13,6 +13,7 @@ const routes: Routes = [
     { path: 'dashboard',component: DashboardComponent, canActivate: [AuthGuard] },
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'detail/:id', component: HeroDetailComponent },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

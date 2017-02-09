@@ -90,3 +90,6 @@ virtenv/
 
 # Rope project settings
 .ropeproject
+
+.idea
+.vscode

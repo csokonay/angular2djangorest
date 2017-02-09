@@ -11,6 +11,7 @@ import { AuthenticationService } from './_services/index';
      <nav>
         <a routerLink="/dashboard" routerLinkActive="active" *ngIf="authService.isLoggedIn()">Dashboard</a>
         <a routerLink="/heroes" routerLinkActive="active" *ngIf="authService.isLoggedIn()">Heroes</a>
+        <a [routerLink]="['/home']" *ngIf="authService.isCustomerLoggedIn()">User list</a>
         <a [routerLink]="['/login']" *ngIf="authService.isLoggedIn()">Logout</a>
      </nav>
      <router-outlet></router-outlet>
