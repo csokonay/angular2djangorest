@@ -9,7 +9,7 @@ import { AppRoutingModule }        from './app.routing';
 import { HeroService } from './mycomponents/hero.service';
 import { AuthGuard } from './_guards/index';
 import { AuthenticationService, UserService } from './_services/index';
-import { LoginComponent } from './login/index';
+import { LoginComponent, ServiceLoginComponent } from './login/index';
 import { HomeComponent } from './home/index';
 import { HeroesComponent } from './mycomponents/heroes.component';
 import { HeroDetailComponent, EnterMeetingComponent } from './mycomponents/index';
@@ -25,9 +25,9 @@ import { DashboardComponent } from './mycomponents/index';
     declarations: [
         AppComponent,
         LoginComponent,
+        ServiceLoginComponent,
         HomeComponent,
         DashboardComponent,
-        //HeroComponent,
         HeroesComponent,
         HeroDetailComponent,
         EnterMeetingComponent
