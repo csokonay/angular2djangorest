@@ -13,12 +13,12 @@ export class AuthenticationService {
         this.token = currentUser && currentUser.token;
     }
 
-    login(username: string, password: string): Observable<boolean> {
+    login(username: string, password: string, authurl: string): Observable<boolean> {
         let body = JSON.stringify({ username: username, password: password });
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
         
-        return this.http.post('http://localhost:8000/api/authenticate', body, options)
+        return this.http.post(authurl, body, options)
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let token = response.json() && response.json().token;
@@ -39,6 +39,16 @@ export class AuthenticationService {
                     return false;
                 }
             });
+    }
+
+    loginCustomer(username: string, password: string) : Observable<boolean> 
+    {
+        return this.login(username, password, 'http://localhost:8000/api/customerauth')
+    }
+
+    loginService(username: string, password: string) : Observable<boolean> 
+    {
+        return this.login(username, password, 'http://localhost:8000/api/serviceauth')
     }
 
     logout(): void {

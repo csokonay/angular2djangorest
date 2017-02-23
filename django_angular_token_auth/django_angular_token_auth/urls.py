@@ -15,12 +15,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from authentication.views import UserListAPIView
-from rest_framework_jwt.views import obtain_jwt_token
+from authentication.views import UserListAPIView, obtain_jwt_token_customer, obtain_jwt_token_service
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'api/authenticate', obtain_jwt_token),
+    url(r'api/customerauth', obtain_jwt_token_customer),
+    url(r'api/serviceauth', obtain_jwt_token_service),
     url(r'api/users', UserListAPIView.as_view()),
 
     #url(r'^.*$', TemplateView.as_view(template_name='index.html')),
